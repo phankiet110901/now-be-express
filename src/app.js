@@ -6,6 +6,7 @@ import bodyParser from "body-parser";
 
 // import route
 import adminRoute from "./routes/admin.route.mjs";
+import authRoute from "./routes/auth.route.mjs";
 
 dotenv.config();
 const app = express();
@@ -15,8 +16,8 @@ app.use(morgan("combined"));
 app.use(bodyParser.urlencoded({ extended: false }));
 
 
-// admin route
 app.use(adminRoute);
+app.use(authRoute);
 
 // 404 route
 app.use((req, res) => {

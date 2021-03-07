@@ -1,8 +1,8 @@
 import { adminRepo } from "./admin.repository.mjs";
 
 class AdminService {
-  async getListUser(pagination) {
-    return await adminRepo.getListUser(pagination);
+  async getListAdmin(pagination) {
+    return await adminRepo.getListAdmin(pagination);
   }
 
   async createAdmin(admin) {

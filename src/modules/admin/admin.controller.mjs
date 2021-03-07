@@ -9,14 +9,12 @@ class AdminController {
       return res.status(400).json({ errors: errs.array() });
     }
 
-    return res
-      .status(200)
-      .json({
-        all_admins: await adminService.getListUser({
-          currentPage: req.params.currentPage,
-          limit: req.params.limit,
-        }),
-      });
+    return res.status(200).json(
+      await adminService.getListAdmin({
+        currentPage: req.params.currentPage,
+        limit: req.params.limit,
+      })
+    );
   }
 
   async store(req, res) {
